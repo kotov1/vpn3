@@ -4,8 +4,18 @@ $(function() {
 	// Выезжающий блок вверху страницы
 	$(document).ready(function(){
 		$(".toggle-btn").click(function(){
-			$('.toggle-btn').toggleClass("on");
-			$(".top-line__content").slideToggle("200");
+
+			if(!($('.toggle-btn').hasClass("on"))){
+
+				$('.toggle-btn').addClass("on");
+				$('.page').css({"padding-top": "110px"});
+				$(".top-line__content").slideToggle("200");
+			} else {
+				$('.toggle-btn').removeClass("on");
+				$('.page').css({"padding-top": "50px"});
+				$(".top-line__content").slideToggle("200");
+			}
+			
 		});
 	});
 
